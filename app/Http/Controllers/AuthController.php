@@ -29,4 +29,42 @@ class AuthController extends Controller
     public function login(){
         return view("login");
     }
+
+    public function register(){
+        return view("register");
+    }
+
+    function signup(Request $request) {
+
+        $username          = $request->username;
+        $password           = $request->password;
+        $conf_password    = $request->conf_password;
+
+        if($password != $conf_password){
+            return back()->withErrors([
+                'conf_password' => 'KOnfirmasi password salah.',
+            ]);
+        }
+
+        $data_insert    = [
+            "username"   => $username,
+            "password"  => \Hash::make($password)
+        ];
+
+        $insert     = \DB::table("user")->insert($data_insert);
+        return redirect("login");
+
+
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+     
+        $request->session()->invalidate();
+     
+        $request->session()->regenerateToken();
+     
+        return redirect('/');
+    }
 }

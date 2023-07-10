@@ -40,7 +40,9 @@
                                     <label class="form-check-label" for="exampleCheck1">Remember Me</label>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-12 bn">Daftar</div>
+                            <div class="col-md-6 col-12 bn">
+                                <a href="/register">Daftar</a>
+                            </div>
                         </div>
                         <div class="form-group mt-3">
                             <button type="submit" class="btn btn-block btn-primary btn-lg"><small><i class="far fa-user pr-2"></i>Masuk</small></button>

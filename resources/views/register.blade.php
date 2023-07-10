@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/login.css')}}">
 </head>
 
 <body>
-    <form action="/login" method="POST">
+    <form action="/register" method="POST">
         @csrf
         <div class="container">
         <div class="row d-flex justify-content-center mt-5">
@@ -34,14 +34,16 @@
                             <input type="password" name="password" class="form-control" placeholder="Password">
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" class="form-control" placeholder="Konfirmasi Password">
+                            <input type="password" name="conf_password" class="form-control" placeholder="Konfirmasi Password">
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-12"></div>
-                            <div class="col-md-6 col-12 bn">Daftar</div>
+                            <div class="col-md-6 col-12 bn">
+                                <a href="/login">Login</a>
+                            </div>
                         </div>
                         <div class="form-group mt-3">
-                            <button type="button" class="btn btn-block btn-primary btn-lg"><small><i class="far fa-user pr-2"></i>Masuk</small></button>
+                            <button type="submit" class="btn btn-block btn-primary btn-lg"><small><i class="far fa-user pr-2"></i>Register</small></button>
                         </div>
                     </form>
                 </div>
